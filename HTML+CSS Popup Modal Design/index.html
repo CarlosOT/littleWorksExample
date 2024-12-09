@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Popup</title>
+    <style>
+        body{
+            background-color: rgb(255, 225, 185);
+            font-family: 'Roboto', sans-serif;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .exit-row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .e-col-8{
+            flex-basis: 66.67%;
+            padding: 25px;
+        }
+        .e-col-4{
+            flex-basis: 33.33%;
+        }
+        #exit-popup{
+            display: none;
+            max-width: 900px;
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.279);
+            overflow: hidden;
+        }
+        #exit-popup img{
+            max-width: 100%;
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+        }
+        #exit-popup h2{
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #000000ca;
+        }
+        #exit-popup p{
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #0000009c;
+        }
+        #exit-popup-close{
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            top: 0;
+            right: 5px;
+            font-size: 2.5em;
+            opacity: 0.45;
+        }
+        #exit-popup-close:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .exit-content{
+            max-width: 480px;
+            margin: auto;
+        }
+        .btn{
+            padding: 20px 25px;
+            border: none;
+            background-color: #00835e;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            width: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="exit-popup">
+        <div class="exit-inner">
+            <div class="exit-row">
+                <div class="e-col-8">
+                    <div class="exit-content">
+                        <h2>Wait! If you leave now, you won't get 6 months free.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quasi eveniet et obcaecati id architecto magnam commodi iure illo veniam sunt, suscipit repudiandae molestiae atque voluptatum repellendus! Nesciunt, eligendi debitis?</p>
+                        <button class="btn">Get 6 months free</button>
+                        <button id="exit-popup-close">&#215;</button>
+                    </div>
+                </div>
+                <div class="e-col-4">
+                    <img src="iStock2-883019542.jpg" alt="produto">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+const exitPopup = document.getElementById('exit-popup');
+const exitPopupClose = document.getElementById('exit-popup-close');
+
+
+const hideExitPopup = () => exitPopup.style.display = "none";
+const showExitPopup = () => exitPopup.style.display = "block";
+
+document.addEventListener('mouseleave', showExitPopup);
+exitPopupClose.addEventListener('click', hideExitPopup);
+
+
+
+</script>    
+
+</body>
+</html>
